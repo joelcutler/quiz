@@ -10,9 +10,12 @@
 //     -store high score data and display them upon completion of quiz
 
 var startButtonEl = document.querySelector("#start-button");
+var questionAnswerEl = document.querySelector(".q-a");
 var timerEl = document.querySelector("#time");
 var timeLeft = 75
+
 timerEl.innerHTML = timeLeft;
+
 
 function countDown() {
     timeLeft = 75;
@@ -29,7 +32,7 @@ function countDown() {
 
 function quizStart() {
     startButtonEl.remove();
-
+    questionAnswerEl.style.display = "block";
     countDown();
 }
 

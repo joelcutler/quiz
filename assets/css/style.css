@@ -2,11 +2,11 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html,
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -48,10 +48,35 @@ header a {
 #instructions {
     padding-top: 15px;
     font-size: 18px;
+    font-weight: bold;
     display: flex;
     justify-content: center;
 }
 
 main {
     text-align: center;
+}
+
+.q-a {
+    color: darkolivegreen;
+    display: none;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+.answers button {
+    background-color: darkolivegreen;
+    color: rgb(255, 255, 255);
+    align-self: center;
+    width: 50%;
+}
+
+#question {
+    border-bottom: solid 2px darkolivegreen;
+    font-weight: bold;
 }
