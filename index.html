@@ -12,16 +12,26 @@
 <body>
     <header>
         <a href="./hi-score.html">View High Scores</a>
-        <p id="#time"> Time: 75s </p>
+        <p> Time:<span id="time"></span>s</p>
 
     </header>
 
     <main>
-        <button>START QUIZ</button>
+        <div>
+            <p id="instructions">Answer the questions within the time limit. Wrong answers will deduct 10s off your time. Good luck!</p>
+        </div>
+        <div>
+            <button id="start-button">START QUIZ</button>
+        </div>
+
+        <div>
+            <p id="question">Question</p>
+        </div>
+
     </main>
-    <div>
-        <p>Answer the questions within the time limit. Wrong answers will decuct 10s off your time. Good luck!</p>
-    </div>
+
+
+
 
 
     <script src="./assets/js/script.js"></script>

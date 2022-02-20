@@ -9,33 +9,32 @@
 //     -display whether answers are correct or incorrect upon selection(click) 
 //     -store high score data and display them upon completion of quiz
 
-var buttonEl = document.querySelector("button");
-
-var timerEl = document.createElement("p");
+var startButtonEl = document.querySelector("#start-button");
+var timerEl = document.querySelector("#time");
 var timeLeft = 75
-timerEl.textcontent = "Time: " + timeLeft + "s";
+timerEl.innerHTML = timeLeft;
 
-function countdown() {
-    var timeLeft = 75;
+function countDown() {
+    timeLeft = 75;
     var countInterval = setInterval(function() {
         if (timeLeft === 0) {
             clearInterval(countInterval);
-            timerEl.textContent = '';
-            displayMessage();
-        } else if (timeLeft === 1) {
-            timerEl.textContent = timeLeft + " second remaining";
-            timeLeft--;
+            timerEl.textContent = timeLeft;
         } else {
-            timerEl.textContent = timeLeft + " seconds remaining";
             timeLeft--;
+            timerEl.textContent = timeLeft;
         }
     }, 1000);
-
-    // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-    var timeInterval = setInterval(function() {});
 }
 
-buttonEl.addEventListener("click", countdown);
+function quizStart() {
+    startButtonEl.remove();
+
+    countDown();
+}
+
+startButtonEl.addEventListener("click", quizStart);
+
 
 
 
