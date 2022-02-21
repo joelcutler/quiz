@@ -56,19 +56,19 @@ var quizQuestions = {
     ten: "What is the terminology for a loop that doesn't end?",
 };
 var q1Answers = {
-    A: "Hyper Text Markup Language",
+    A: "Hyper Text Markup Language", //correct
     B: "Hit Them Massive Lumbers",
     C: "High Test Math Liquid",
     D: "Hyper Technical Mathematical Language",
 };
 var q2Answers = {
     A: "Candid Screen Standards",
-    B: "Cascading Style Sheets",
+    B: "Cascading Style Sheets", //correct
     C: "Creating Slick Styles",
     D: "Creating Style Simply",
 };
 var q3Answers = {
-    A: "No relation twixt the two",
+    A: "No relation twixt the two", //correct
     B: "Both are named after coffee",
     C: "Both were invented on the island of Java",
     D: "Java requires no scripting",
@@ -76,50 +76,54 @@ var q3Answers = {
 var q4Answers = {
     A: "Properties that influence the styling and layout of HTML elements",
     B: "Good manners, politeness, pride without showboating, empathy, humility, and an abundance of self - control",
-    C: "An attribute used to define a group of HTML elements in order to apply unique styling and formatting to those elements",
+    C: "An attribute used to define a group of HTML elements in order to apply unique styling and formatting to those elements", //correct
     D: "Specifies how to style the targeted HTML elements",
 };
 var q5Answers = {
     A: "Parses Jasons",
     B: "Converts infidels into believers",
     C: "Converts numbers into strings",
-    D: "Converts strings into numbers",
+    D: "Converts strings into numbers", //correct
+
 };
 var q6Answers = {
     A: "Parentheses",
-    B: "Processing",
-    C: "Penguin",
-    D: "Paragraph",
+    B: "Paragraph", //correct
+    C: "Processing",
+    D: "Penguin",
 };
 var q7Answers = {
     A: "Else, If, Else if",
     B: "Else if, If, Else",
     C: "If, Else, Else if",
-    D: "If, Else if, Else",
+    D: "If, Else if, Else", //correct
+
 };
 var q8Answers = {
     A: "Number",
     B: "Boolean",
     C: "String",
-    D: "Data",
+    D: "Data", //correct
+
 };
 var q9Answers = {
     A: "Return",
-    B: "Break",
+    B: "Break", //correct
     C: "Stop",
     D: "Cease",
 };
 var q10Answers = {
     A: "Endless Cycling",
     B: "Interminable Iteration",
-    C: "Infinite Loop",
+    C: "Infinite Loop", //correct
     D: "Unceasing Loop of Horror",
 };
 
 
 function quiz() {
+    // check if answer was correct then preesnt next quesion and possible answers
     for (var i = 0; i < quizQuestions.length; i++) {
-        if (quizQuestions[i]) {
+        if (quizQuestions[i]) { //finish the iteration
 
         }
     };
@@ -131,6 +135,28 @@ function quiz() {
 
 
 };
+
+function deduct10s() {
+    timeLeft = timeLeft - 10;
+};
+
+function endGame() {
+    var highScore = localStorage.getItem("highscore");
+    if (highScore === null) { // <= could also be "highScore = highScore || 0;""
+        highScore = 0;
+    }
+
+    if (timeLeft === 0) // or iteration of questions finishes) 
+    {
+        var highScore = timeLeft
+        highScore = localStorage.setItem("highscore", timeLeft);
+        var initials = window.prompt("You've set a new high score! Please enter your initials");
+        initials = localStorage.setItem("initials", initials);
+    }
+
+
+}
+
 
 startButtonEl.addEventListener("click", quizStart);
 
