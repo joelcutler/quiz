@@ -1,82 +1,97 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: darkgray;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: darkgray;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 header p {
-    color: darkolivegreen;
-    font-weight: bold;
-    font-size: 30px;
-    padding: 10px;
-    margin: 10px;
+  color: darkolivegreen;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
 }
 
 header a {
-    color: forestgreen;
-    display: flex;
-    margin: 8px;
-    font-size: 30px;
-    padding: 10px;
-    margin: 10px;
+  color: forestgreen;
+  display: flex;
+  margin: 8px;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
 }
 
+button {
+  background-color: darkolivegreen;
+  color: rgb(255, 255, 255);
+  align-self: center;
+  width: 10%;
+}
+header button {
+  margin-left: 2%;
+}
 #start-button {
-    background-color: darkolivegreen;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    margin-top: 20px;
-    width: 150px;
-    height: 30px;
-    justify-content: center;
+  background-color: darkolivegreen;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  justify-content: center;
 }
 
 #instructions {
-    padding-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 
 .q-a {
-    color: darkolivegreen;
-    display: none;
+  color: darkolivegreen;
+  display: none;
 }
 
 .answers {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
 }
 
 .answers button {
-    background-color: darkolivegreen;
-    color: rgb(255, 255, 255);
-    align-self: center;
-    width: 50%;
+  background-color: darkolivegreen;
+  color: rgb(255, 255, 255);
+  align-self: center;
+  width: 50%;
 }
 
 #question {
-    border-bottom: solid 2px darkolivegreen;
-    font-weight: bold;
+  border-bottom: solid 2px darkolivegreen;
+  font-weight: bold;
+}
+
+#scores-div {
+  display: flex;
+  justify-content: center;
 }

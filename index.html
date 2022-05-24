@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <a href="./hi-score.html">View High Scores</a>
+        <button id="high-scores-button">View High Scores</button>
         <p> Time:<span id="time"></span>s</p>
 
     </header>
@@ -26,13 +26,15 @@
 
         <div class="q-a">
             <p id="question"></p>
-            <div class="answers">
-
+            <div class="answers" id="answers">
             </div>
         </div>
 
     </main>
 
+    <div id="scores-div">
+        <ul id="scores-ul"></ul>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 </body>
