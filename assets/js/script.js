@@ -23,6 +23,7 @@ var answers = document.querySelector("#answers");
 var instructionsEl = document.querySelector("#instructions");
 var scoresButtonEl = document.querySelector("#high-scores-button");
 var scoresEl = document.querySelector("#scores-div");
+var scoresUlEl = document.querySelector("#scores-ul");
 var countInterval;
 timerEl.innerHTML = timeLeft;
 
@@ -42,11 +43,14 @@ function countDown() {
 function quizStart() {
   startButtonEl.remove();
   questionAnswerEl.style.display = "block";
+  scoresEl.style.display = "none";
+
   countDown();
   nextQuestion(QuestIndex);
   if (timeLeft === 0) {
     endGame();
   }
+  scoresButtonEl.addEventListener("click", displayScores);
 }
 
 var quizQuestions = [
@@ -221,15 +225,27 @@ function endGame() {
 }
 
 function displayScores() {
+  scoresEl.style.display = "flex";
   var savedScores = localStorage.getItem("highScoreZ");
   savedScores = JSON.parse(savedScores);
-  for (var i = 0; i < savedScores.length; i++) {
-    var li = document.createElement("li");
-    // li.setAttribute("class",);
-    li.textContent =
-      savedScores[i].initials + " - " + savedScores[i].highscore + " points";
-    document.getElementById("scores-ul").appendChild(li);
-  }
+
+  scoresUlEl.innerHTML = `
+    ${savedScores
+      .map(
+        (score, index) => `
+        <li> ${score.initials + " - " + score.highscore + " points"} </li>
+  `
+      )
+      .join("")}`;
+
+  //   for (var i = 0; i < savedScores.length; i++) {
+  //     var li = document.createElement("li");
+  //     // li.setAttribute("class",);
+  //     li.textContent =
+  //       savedScores[i].initials + " - " + savedScores[i].highscore + " points";
+  //     document.getElementById("scores-ul").appendChild(li);
+  //   }
+  scoresButtonEl.removeEventListener("click", displayScores);
 }
 
 scoresButtonEl.addEventListener("click", displayScores);
